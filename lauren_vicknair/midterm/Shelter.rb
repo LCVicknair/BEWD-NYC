@@ -3,22 +3,22 @@ class Shelter
 
 	def initialize (name)
 		@name = name
-		self.animals = []
-		self.clients = []
+		@animals = []
+		@clients = []
 	end
 
 	def add_animal(a)
-		@animals << a
+		@animals << a#.split(",")
 	end
 
 	def add_client(t)
-		@clients << t
+		@clients << t#.split(",")
 	end
 	
 	def to_s
 	    "Name: #{@name}
-	    Animals: #{@animals}
-	    Clients: #{@clients}"
+	    Animals: #{@animals.join(', ')}
+	    Clients: #{@clients.join(', ')}"
 	end
 end
 

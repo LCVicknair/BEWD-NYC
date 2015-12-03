@@ -8,13 +8,16 @@ class Animal
 	end
 
 	def add_toy(t)
-		@toys << t
+		@toys << t.split(",")
 	end
 
+	def self.all
+	 ObjectSpace.each_object(self).to_a
+	end
 	
 	def to_s
-	    "Name: #{@name}
-	    Species: #{@species}
-	    Toys: #{@toys}"
+    "Name: #{@name}
+    Species: #{@species}
+    Toys: #{@toys.join(', ')}"
 	end
 end

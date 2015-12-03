@@ -8,12 +8,16 @@ class Client
 	end
 
 	def add_pet(p)
-		@pets << p
+		@pets << p.split(",")
+	end
+
+	def self.all
+	    ObjectSpace.each_object(self).to_a
 	end
 	
 	def to_s
 	    "Name: #{@name}
 	    Age: #{@age}
-	    Pets: #{@pets}"
+	    Pets: #{@pets.join(', ')}"
 	end
 end
